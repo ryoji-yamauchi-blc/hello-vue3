@@ -1,0 +1,18 @@
+<script lang="ts" setup>
+import { ListCell } from "@/components/atoms";
+</script>
+
+<template>
+  <div class="row">
+    <ListCell>ID</ListCell>
+    <ListCell>名前</ListCell>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--vt-c-gray300);
+}
+</style>
