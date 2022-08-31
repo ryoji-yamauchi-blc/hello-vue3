@@ -9,7 +9,7 @@ export default defineConfig({
     vue({
       // https://vuejs.org/guide/extras/reactivity-transform.html#explicit-opt-in
       // https://github.com/vuejs/rfcs/discussions/369
-      reactivityTransform: true,
+      //reactivityTransform: true,
     }),
   ],
   resolve: {
