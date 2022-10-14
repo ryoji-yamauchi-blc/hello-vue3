@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { MainTemplate } from "@/components/templates";
+import { Stack } from "@/components/layouts";
 </script>
 
 <template>
   <MainTemplate title="Vue3素振りページ">
-    <div class="container">
+    <Stack>
       <section>
         <p>以下は認証不要</p>
         <ul>
@@ -17,7 +18,7 @@ import { MainTemplate } from "@/components/templates";
           <li>ユーザー一覧</li>
         </ul>
       </section>
-    </div>
+    </Stack>
   </MainTemplate>
 </template>
 

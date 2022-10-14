@@ -3,7 +3,6 @@ import type { LoginFormValues } from "@/models";
 import { useRouter } from "vue-router";
 import { authRepository } from "@/repositories";
 import { useAuthStore } from "@/stores";
-import { MainTemplate } from "@/components/templates";
 import LoginForm from "./LoginForm.vue";
 
 const store = useAuthStore();
@@ -22,15 +21,13 @@ const handleSubmit = async (formValues: LoginFormValues) => {
 </script>
 
 <template>
-  <MainTemplate :show-header="false">
-    <div class="page-inner">
-      <LoginForm class="form" @submit="handleSubmit" />
-    </div>
-  </MainTemplate>
+  <div class="container">
+    <LoginForm class="form" @submit="handleSubmit" />
+  </div>
 </template>
 
 <style lang="scss" scoped>
-.page-inner {
+.container {
   height: 100%;
   display: flex;
   align-items: center;

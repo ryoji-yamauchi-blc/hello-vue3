@@ -28,7 +28,7 @@ const styles = computed(() => ({
 </script>
 
 <template>
-  <input
+  <textarea
     class="input"
     :class="styles"
     type="text"
@@ -40,15 +40,16 @@ const styles = computed(() => ({
 
 <style lang="scss" scoped>
 .input {
-  display: inline-flex;
+  display: inline-block;
   width: 100%;
-  height: 40px;
-  align-items: center;
+  padding-top: 12px;
   padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 16px;
+  padding-bottom: 12px;
   border-radius: 4px;
   border-width: 1px;
   border-color: var(--w-c-gray300);
+  overflow: scroll;
 
   &--error {
     border-color: var(--w-p-primary);

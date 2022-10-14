@@ -5,28 +5,30 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import { toRef } from "vue";
 import { useField } from "vee-validate";
-import { TextField } from "@/components/atoms";
+import { toRef } from "vue";
+import { Tooltip, TextField } from "@/components/atoms";
+
+type UseFieldArgs = Parameters<typeof useField<string>>;
 
 const props = defineProps<{
   name: string;
-  rule?: (value: any) => true | string;
+  rules?: UseFieldArgs[1];
+  fieldOptions?: UseFieldArgs[2];
+  // NOTE ComponentProps<typeof Tooltip>ができるようになったら、切り替えたい
+  placement?: "top" | "bottom" | "left" | "right";
 }>();
 
 const nameRef = toRef(props, "name");
-const ruleRef = toRef(props, "rule");
-const { value, errorMessage } = useField<string>(nameRef, ruleRef);
+const { value, errorMessage } = useField<string>(
+  nameRef,
+  props.rules,
+  props.fieldOptions
+);
 </script>
 
 <template>
-  <div>
-    <TextField
-      v-model="value"
-      :error-message="errorMessage"
-      :name="props.name"
-      v-bind="$attrs"
-    />
-    <p>{{ errorMessage }}</p>
-  </div>
+  <Tooltip :show="!!errorMessage" :content="errorMessage">
+    <TextField v-model="value" :isError="!!errorMessage" v-bind="$attrs" />
+  </Tooltip>
 </template>
