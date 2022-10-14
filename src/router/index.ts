@@ -1,9 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import LoginView from "../views/LoginView.vue";
-import HomeView from "../views/HomeView.vue";
-import UserListView from "../views/users/UserListView.vue";
-import UserCreateView from "../views/users/UserCreateView.vue";
-import UserCreateStep0View from "../views/users/UserCreateViewStep0.vue";
+import LoginView from "@/views/LoginView.vue";
+import WelcomeView from "@/views/WelcomeView.vue";
+import UserListView from "@/views/users/UserListView.vue";
+import UserCreateView from "@/views/users/UserCreateView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,8 +14,8 @@ const router = createRouter({
     },
     {
       path: "/",
-      name: "home",
-      component: HomeView,
+      name: "welcome",
+      component: WelcomeView,
     },
     {
       path: "/users",
@@ -27,11 +26,6 @@ const router = createRouter({
       path: "/users/create",
       name: "user-create",
       component: UserCreateView,
-    },
-    {
-      path: "/users-step0/create",
-      name: "user-step0-create",
-      component: UserCreateStep0View,
     },
     {
       path: "/about",

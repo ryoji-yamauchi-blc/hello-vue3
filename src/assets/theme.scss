@@ -1,0 +1,16 @@
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-gray300: #dadedf;
+  --vt-c-black: #030303;
+  --vt-c-blue: #1a73e8;
+  --vt-c-red: #d32f2f;
+  --vt-c-pink: #f29089;
+}
+
+:root {
+  --vt-p-text: var(--vt-c-black);
+  --vt-p-primary: var(--vt-c-blue);
+  --vt-p-attention: var(--vt-c-red);
+  --vt-p-background: var(--vt-c-white);
+  --vt-p-header: var(--vt-c-pink);
+}

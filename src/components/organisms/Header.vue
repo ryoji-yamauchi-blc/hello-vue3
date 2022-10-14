@@ -5,7 +5,7 @@ const store = useAuthStore();
 
 <template>
   <header class="header">
-    <h1>Hello Vue3</h1>
+    <h1 class="f-lb">Hello Vue3</h1>
     <div>
       {{ store.name }}
     </div>
@@ -15,7 +15,7 @@ const store = useAuthStore();
 <style lang="scss" scoped>
 .header {
   padding: 10px;
-  background-color: var(--color-header);
+  background-color: var(--vt-p-header);
   display: flex;
   justify-content: space-between;
 }
