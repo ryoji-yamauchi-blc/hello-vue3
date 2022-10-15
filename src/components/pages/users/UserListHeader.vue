@@ -15,6 +15,7 @@ import { ListCell } from "@/components/atoms";
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr 50px;
-  background-color: var(--vt-c-gray300);
+  border-bottom-width: 1px;
+  border-bottom-color: var(--vt-c-gray300);
 }
 </style>

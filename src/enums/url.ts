@@ -1,6 +1,7 @@
 import type { User } from "@/models";
 
 export const PAGE_URL = {
+  USER_LOGIN: "/login",
   USER_LIST: "/users",
   USER_CREATE: "/users/create",
   USER_EDIT: (id: User["id"]) => `/users/${id}/edit`,

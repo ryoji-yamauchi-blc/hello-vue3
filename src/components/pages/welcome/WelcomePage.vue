@@ -1,31 +1,31 @@
 <script setup lang="ts">
-import { MainTemplate } from "@/components/templates";
 import { Stack } from "@/components/layouts";
+import { Title } from "@/components/atoms";
+import { PAGE_URL } from "@/enums";
 </script>
 
 <template>
-  <MainTemplate title="Vue3素振りページ">
-    <Stack>
-      <section>
-        <p>以下は認証不要</p>
-        <ul>
-          <li>ログインページ</li>
-        </ul>
-      </section>
-      <section>
-        <p>以下は認証が必要</p>
-        <ul>
-          <li>ユーザー一覧</li>
-        </ul>
-      </section>
-    </Stack>
-  </MainTemplate>
+  <div class="container">
+    <Title>Vue3素振りページ</Title>
+    <div class="content">
+      <Stack>
+        <RouterLink class="link" :to="PAGE_URL.USER_LOGIN">
+          WIP:ログインページ
+        </RouterLink>
+        <RouterLink class="link" :to="PAGE_URL.USER_LIST">
+          ログイン後のページ
+        </RouterLink>
+      </Stack>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  padding: 16px;
+}
+
+.link {
+  text-decoration: underline;
 }
 </style>

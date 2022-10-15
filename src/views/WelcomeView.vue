@@ -3,7 +3,5 @@ import { WelcomePage } from "@/components/pages";
 </script>
 
 <template>
-  <main>
-    <WelcomePage />
-  </main>
+  <WelcomePage />
 </template>
