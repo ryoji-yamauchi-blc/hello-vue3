@@ -1,6 +1,7 @@
 import type { User } from "@/models";
 
 export const PAGE_URL = {
+  WELCOME: "/",
   USER_LOGIN: "/login",
   USER_LIST: "/users",
   USER_CREATE: "/users/create",
