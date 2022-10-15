@@ -3,6 +3,7 @@ import LoginView from "@/views/LoginView.vue";
 import WelcomeView from "@/views/WelcomeView.vue";
 import UserListView from "@/views/users/UserListView.vue";
 import UserCreateView from "@/views/users/UserCreateView.vue";
+import UserEditView from "@/views/users/UserEditView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: "/users/create",
       name: "user-create",
       component: UserCreateView,
+    },
+    {
+      path: "/users/:id/edit",
+      name: "user-edit",
+      component: UserEditView,
     },
     {
       path: "/about",

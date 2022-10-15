@@ -48,10 +48,14 @@ const styles = computed(() => ({
   padding-right: 16px;
   border-radius: 4px;
   border-width: 1px;
-  border-color: var(--w-c-gray300);
+  border-color: var(--vt-c-gray300);
+
+  &:disabled {
+    background-color: var(--vt-c-gray300);
+  }
 
   &--error {
-    border-color: var(--w-p-primary);
+    border-color: var(--vt-p-attention);
   }
 }
 </style>

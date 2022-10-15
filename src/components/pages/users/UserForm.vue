@@ -1,48 +1,72 @@
-<script lang="ts">
-//export type FormValues = {
-//  name: string;
-//  password: string;
-//};
-</script>
-
 <script setup lang="ts">
-import { useForm, useField } from "vee-validate";
-import { validator } from "@/utils";
+import { useForm } from "vee-validate";
+import { toFormValidator } from "@vee-validate/zod";
+import type { UserFormValues } from "@/models";
+import { userFormSchema } from "@/models";
+import { FormTextField } from "@/components/forms";
+import { Stack } from "@/components/layouts";
 import { Button } from "@/components/atoms";
-import { TextField } from "@/components/atoms";
 
-//const props = defineProps({
-//  defaultValues: {
-//    type: Object as PropType<UserFormValues>,
-//    required: true,
-//  },
-//});
+const props = defineProps<{
+  initialValues?: UserFormValues;
+  isEdit?: boolean;
+}>();
 
-//const emit = defineEmits<{ (e: "submit", formValues: UserFormValues): void }>();
+const emit = defineEmits<{
+  (e: "prev"): void;
+  (e: "submit", formValues: UserFormValues): void;
+}>();
 
-//const formValues = reactive(props.defaultValues);
+const validationSchema = toFormValidator(userFormSchema);
 
-const { handleSubmit } = useForm();
-const { value, errorMessage } = useField<string>("id", validator.id, {
-  initialValue: "",
+const { handleSubmit } = useForm<UserFormValues>({
+  initialValues: props.initialValues || {
+    id: "",
+    name: "",
+  },
+  validationSchema,
 });
 
 const onSubmit = handleSubmit((formValues) => {
-  console.log(formValues);
+  emit("submit", formValues);
 });
 </script>
 
 <template>
   <form @submit="onSubmit">
-    <div>
-      <TextField v-model="value" :error-message="errorMessage" />
-    </div>
-    <Button type="submit">登録</Button>
+    <Stack>
+      <div class="row">
+        <label for="id">id</label>
+        <FormTextField name="id" :disabled="isEdit" />
+      </div>
+      <div class="row">
+        <label for="name">name</label>
+        <FormTextField name="name" />
+      </div>
+      <div class="footer">
+        <Button type="button" variant="secondary" @click="emit('prev')">
+          戻る
+        </Button>
+        <Button type="submit">登録</Button>
+      </div>
+    </Stack>
   </form>
 </template>
 
 <style lang="scss">
 input {
   border: 1px solid black;
+}
+
+.row {
+  & > label {
+    display: inline-block;
+    width: 100px;
+  }
+}
+
+.footer {
+  display: flex;
+  gap: 16px;
 }
 </style>

@@ -1,20 +1,19 @@
 <script setup lang="ts">
+import { PAGE_URL } from "@/enums";
 import { MainTemplate } from "@/components/templates";
-import UserList from "./UserList.vue";
 import { Button } from "@/components/atoms";
+import UserList from "./UserList.vue";
 </script>
 
 <template>
-  <MainTemplate>
-    <div class="page-inner">
-      <div class="buttons">
-        <RouterLink to="/users/create">
-          <Button type="button">新規登録</Button>
-        </RouterLink>
-        <Button type="button" variant="attention">削除</Button>
-      </div>
-      <UserList class="user-list" />
+  <MainTemplate title="ユーザー一覧">
+    <div class="buttons">
+      <RouterLink :to="PAGE_URL.USER_CREATE">
+        <Button type="button">新規登録</Button>
+      </RouterLink>
+      <Button type="button" variant="attention">削除</Button>
     </div>
+    <UserList class="user-list" />
   </MainTemplate>
 </template>
 

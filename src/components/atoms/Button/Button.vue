@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from "vue";
 const { variant = "primary" } = defineProps<{
-  variant?: "primary" | "attention";
+  variant?: "primary" | "secondary" | "attention";
 }>();
 
 const style = computed(() => {
@@ -24,6 +24,12 @@ const style = computed(() => {
   &--primary {
     background-color: var(--vt-c-blue);
   }
+
+  &--secondary {
+    color: var(--vt-c-black);
+    background-color: var(--vt-c-gray300);
+  }
+
   &--attention {
     background-color: var(--vt-c-red);
   }

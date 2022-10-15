@@ -1,23 +1,25 @@
-<script lang="ts">
-//import type { User } from "@/models";
-</script>
-
 <script lang="ts" setup>
-import { ListCell } from "@/components/atoms";
+import type { User } from "@/models";
+import { PAGE_URL } from "@/enums";
+import { ListCell, Icon } from "@/components/atoms";
 
 const props = defineProps<{
-  id: number;
-  name: string;
+  user: User;
 }>();
 </script>
 
 <template>
   <div class="row">
     <ListCell>
-      {{ props.id }}
+      {{ props.user.id }}
     </ListCell>
     <ListCell>
-      {{ props.name }}
+      {{ props.user.name }}
+    </ListCell>
+    <ListCell>
+      <RouterLink :to="PAGE_URL.USER_EDIT(props.user.id)">
+        <Icon name="edit" />
+      </RouterLink>
     </ListCell>
   </div>
 </template>
@@ -25,6 +27,6 @@ const props = defineProps<{
 <style lang="scss" scoped>
 .row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 50px;
 }
 </style>

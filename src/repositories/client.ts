@@ -6,7 +6,6 @@ const exec = async (...param: Parameters<typeof fetch>) => {
   if (!response.ok) {
     throw new ApiError();
   }
-
   return await response.json();
 };
 

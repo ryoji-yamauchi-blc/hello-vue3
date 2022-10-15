@@ -81,7 +81,7 @@ input {
   min-width: 60px;
   border-radius: 6px;
   border-width: 1px;
-  border-color: var(--w-p-negative);
+  border-color: var(--vt-p-negative);
   padding-left: 8px;
   padding-right: 8px;
   cursor: pointer;
@@ -91,12 +91,12 @@ input {
   }
 
   &--checked {
-    background-color: var(--w-p-primary);
+    background-color: var(--vt-p-primary);
     border-width: 0;
-    color: var(--w-c-white);
+    color: var(--vt-c-white);
 
     & .check {
-      background-color: var(--w-c-white);
+      background-color: var(--vt-c-white);
       border-width: 0;
 
       &::before {
@@ -116,9 +116,9 @@ input {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background-color: var(--w-c-white);
+  background-color: var(--vt-c-white);
   border-width: 1px;
-  border-color: var(--w-p-negative);
+  border-color: var(--vt-p-negative);
   position: relative;
 
   &::before {
@@ -131,8 +131,8 @@ input {
     width: 10px;
     height: 5px;
     left: 3px;
-    border-left: 2px solid var(--w-p-primary);
-    border-bottom: 2px solid var(--w-p-primary);
+    border-left: 2px solid var(--vt-p-primary);
+    border-bottom: 2px solid var(--vt-p-primary);
     border-radius: 1px;
   }
 }

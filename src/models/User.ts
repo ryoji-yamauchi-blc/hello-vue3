@@ -1,9 +1,13 @@
+import * as zod from "zod";
+
 export type User = {
-  id: number;
+  id: string;
   name: string;
 };
 
-export type UserFormValues = {
-  id: number;
-  name: string;
-};
+export const userFormSchema = zod.object({
+  id: zod.string().min(1),
+  name: zod.string().min(1),
+});
+
+export type UserFormValues = zod.infer<typeof userFormSchema>;
