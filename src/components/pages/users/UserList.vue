@@ -4,6 +4,7 @@
 import { useUserList } from "@/components/composables";
 import UserListHeader from "./UserListHeader.vue";
 import UserListItem from "./UserListItem.vue";
+
 const { data: users, isRefetching } = useUserList();
 </script>
 

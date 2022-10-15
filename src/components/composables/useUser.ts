@@ -28,5 +28,6 @@ export const useUser = (id?: User["id"]) => {
     data: query.data,
     post: postMutation.mutate,
     put: putMutation.mutate,
+    isMutating: postMutation.isLoading || putMutation.isLoading,
   };
 };
