@@ -3,8 +3,9 @@ import { API_URL } from "@/enums";
 import type { LoginResponse } from "../authRepository";
 
 const createSession = (attr?: Partial<LoginResponse>): LoginResponse => ({
-  id: 1,
+  id: "1",
   name: "taro",
+  role: "admin",
   ...attr,
 });
 

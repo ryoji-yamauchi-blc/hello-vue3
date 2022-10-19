@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createMemoryHistory } from "vue-router";
 import LoginView from "@/views/LoginView.vue";
 import WelcomeView from "@/views/WelcomeView.vue";
 import UserListView from "@/views/users/UserListView.vue";
@@ -6,7 +6,7 @@ import UserCreateView from "@/views/users/UserCreateView.vue";
 import UserEditView from "@/views/users/UserEditView.vue";
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createMemoryHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/login",
@@ -42,6 +42,10 @@ const router = createRouter({
       component: () => import("../views/AboutView.vue"),
     },
   ],
+});
+
+router.beforeEach((g) => {
+  console.log(g);
 });
 
 export default router;
