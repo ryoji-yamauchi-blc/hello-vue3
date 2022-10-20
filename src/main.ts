@@ -5,6 +5,7 @@ import { worker } from "@/repositories/mocks/browser";
 import App from "./App.vue";
 import router from "./router";
 import "./assets/main.scss";
+import "@/utils/initZod";
 
 const app = createApp(App);
 

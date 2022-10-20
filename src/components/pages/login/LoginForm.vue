@@ -29,8 +29,14 @@ const onSubmit = handleSubmit((formValues) => {
 <template>
   <form @submit="onSubmit">
     <Stack>
-      <FormTextField name="id" placeholder="id" />
-      <FormTextField name="password" placeholder="password" />
+      <label for="id">ID</label>
+      <FormTextField name="id" placeholder="id" data-testid="id" />
+      <label for="password">password</label>
+      <FormTextField
+        name="password"
+        placeholder="password"
+        data-testid="password"
+      />
       <Button type="submit">ログイン</Button>
     </Stack>
   </form>
